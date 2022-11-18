@@ -11,7 +11,6 @@ import com.robert.hroauth.entities.User;
 @Component
 @FeignClient(name = "hr-user", path = "/users")
 public interface UserFeignClient {
-
 	@GetMapping(value = "/search")
 	ResponseEntity<User> findByEmail2(@RequestParam(name = "email") String email);
 }
