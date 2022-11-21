@@ -22,10 +22,10 @@ import com.robert.hrworker.repositories.WorkRepository;
 @RequestMapping(value = "/workers")
 public class WorkerResource {
 
-	private static Logger logger = LoggerFactory.getLogger(WorkerResource.class);
+//	private static Logger logger = LoggerFactory.getLogger(WorkerResource.class);
 
-	@Value("${test.config}")
-	private String testConfig;
+//	@Value("${test.config}")
+//	private String testConfig;
 
 	@Autowired
 	private Environment env;
@@ -35,7 +35,7 @@ public class WorkerResource {
 
 	@GetMapping(value = "/configs")
 	public ResponseEntity<Void> getConfigs() {
-		logger.info("Config=" + testConfig);
+//		logger.info("Config=" + testConfig);
 		return ResponseEntity.noContent().build();
 	}
 
@@ -48,7 +48,7 @@ public class WorkerResource {
 
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Worker> findById(@PathVariable Long id) {
-		logger.info("Port = " + env.getProperty("local.server.port"));
+//		logger.info("Port = " + env.getProperty("local.server.port"));
 		Worker obj = repository.findById(id).get();
 		return ResponseEntity.ok(obj);
 	}
